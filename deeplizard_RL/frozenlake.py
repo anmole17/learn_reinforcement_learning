@@ -37,13 +37,14 @@ q_table=np.zeros((state_space_size, action_space_size))
 # max_steps_per_episodes = 1000
 
 num_episodes = 1000000
-max_steps_per_episodes = 10000
-learning_rate = 0.1
+max_steps_per_episodes = 1000
+learning_rate = 0.2
 discount_rate = 0.99
 exploration_rate = 1
 max_exploration_rate = 1
-min_exploration_rate = 0.1
-exploratoion_decay_rate = 0.0001
+min_exploration_rate = 0.01
+exploratoion_decay_rate = 0.00001
+random_seed=1729
 
 # the one we are using : for pembro and PD1
 # learning_rate = 0.3
@@ -54,8 +55,17 @@ exploratoion_decay_rate = 0.0001
 # min_exploration_rate = 0.5
 # exploratoion_decay_rate = 0.001
 # max at epi: 69000 :  0.06800
+print("num_episodes = ",num_episodes,
+"\nmax_steps_per_episodes =", max_steps_per_episodes,
+"\nlearning_rate =", learning_rate,
+"\ndiscount_rate = ",discount_rate,
+"\nexploration_rate = ",exploration_rate,
+"\nmax_exploration_rate = ",max_exploration_rate,
+"\nmin_exploration_rate = ",min_exploration_rate,
+"\nexploratoion_decay_rate = ",exploratoion_decay_rate,
+"\nrandom_seed = ", random_seed)
 
-
+np.random.seed(random_seed)
 rewards_all_episodes =[]
 
 for episode in range(num_episodes):
