@@ -1,4 +1,4 @@
-import gymnasium as gym
+import gym
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import deque
