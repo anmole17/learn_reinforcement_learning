@@ -101,7 +101,6 @@ class FrozenLakeDQL():
 
                 # Execute action
                 new_state,reward,terminated,truncated,_ = env.step(action)
-
                 # Save experience into memory
                 memory.append((state, action, new_state, reward, terminated)) 
 
@@ -231,7 +230,7 @@ class FrozenLakeDQL():
                     action = policy_dqn(self.state_to_dqn_input(state, num_states)).argmax().item()
 
                 # Execute action
-                state,reward,terminated,truncated,_ = env.step(action)
+                state,reward,terminated,truncated,_= env.step(action)
 
         env.close()
 
