@@ -69,8 +69,9 @@ class FrozenLakeDQL():
         # Create FrozenLake instance
         env = gym.make('FrozenLake-v1', map_name="4x4", is_slippery=is_slippery, render_mode='human' if render else None)
         num_states = env.observation_space.n
+        print(num_states)
         num_actions = env.action_space.n
-        
+        print(num_actions)
         epsilon = 1 # 1 = 100% random actions
         memory = ReplayMemory(self.replay_memory_size)
 
