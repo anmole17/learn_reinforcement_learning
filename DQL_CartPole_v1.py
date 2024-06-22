@@ -74,6 +74,7 @@ LR = 1e-4
 # Get number of actions from gym action space
 n_actions = env.action_space.n
 # Get the number of state observations
+print(env.reset())
 state, info = env.reset()
 n_observations = len(state)
 
